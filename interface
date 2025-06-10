@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Book Store</title>
+        <link rel="stylesheet" href="styling.css">
+    </head>
+    <body>
+        <div class="home">
+            <div class="navbar">
+                <a href="#" class="logo"><img src="logo.jpg" aref="logo"></a>
+                <nav>
+                  <a href="#">Home</a>
+                  <a href="#categories">Categories</a>
+                  <a href="#about">About Us</a>
+                  <a href="#order">Order Form</a>
+                </nav>
+                <div class="search">
+                <input type="text" id="searchInput" placeholder="Search books...">
+                <button>Search</button>
+                </div>
+                <a class="cart">
+                    <img src="cart.webp" alt="cart"></a>
+            </div>
+            <div class="heading"> 
+              <h1> Welcome to Book store </h1>
+            </div>
+            <div class="container">
+              <div class="book">
+                  <img src="book1.jpg" alt="Book Cover">
+                  <div class="book-info">
+                      <h3>Harry Potter</h3>
+                      <p>Author: JK Rowling</p>
+                      <p>Price: PKR 500</p>
+                  </div>
+                  <button>Add to Cart</button>
+              </div>
+              <div class="book">
+                  <img src="book2.jpg" alt="Book Cover">
+                  <div class="book-info">
+                      <h3>To kill a mocking bird</h3>
+                      <p>Author: Harper lee</p>
+                      <p>Price: PKR 650</p>
+                  </div>
+                  <button>Add to Cart</button>
+              </div>
+              <div class="book">
+                <img src="book3.jpg" alt="Book Cover">
+                <div class="book-info">
+                    <h3>Powerless</h3>
+                    <p>Author: Lauren Roberts</p>
+                    <p>Price: PKR 400</p>
+                </div>
+                <button>Add to Cart</button>
+            </div>
+            <div class="book">
+              <img src="book4.jpg" alt="Book Cover">
+              <div class="book-info">
+                  <h3>Divine Rivals</h3>
+                  <p>Author: Rebecca Ross</p>
+                  <p>Price: PKR 400</p>
+              </div>
+              <button>Add to Cart</button>
+          </div>
+          <div class="book">
+            <img src="book5.jpg" alt="Book Cover">
+            <div class="book-info">
+                <h3>It ends with us</h3>
+                <p>Author: Cooleen Hoover </p>
+                <p>Price: PKR 350</p>
+            </div>
+            <button>Add to Cart</button>
+        </div>
+        <div class="book">
+          <img src="book6.jpg" alt="Book Cover">
+          <div class="book-info">
+              <h3>Namal</h3>
+              <p>Author: Nemrah Ahmed</p>
+              <p>Price: PKR 2000</p>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+      <section id="categories" class="categories">
+        <h2>Book Categories</h2>
+         <div class="genre">
+         <img src="book1.jpg" aref="book">
+         <h6>Childrens Books</h6>
+         </div>
+         <div class="genre">
+         <img src="book2.jpg" aref="book">
+         <h6>Classics</h6>
+         </div>
+         <div class="genre">
+         <img src="book3.jpg" aref="book">
+         <h6>Fiction</h6>
+         </div>
+         <div class="genre">
+         <img src="book5.jpg" aref="book">
+         <h6>Best Selling</h6>
+         </div>
+         <div class="genre">
+         <img src="book6.jpg" aref="book">
+         <h6>Urdu novels</h6>
+         </div>
+        </section>
+        <section id="about" class="about">
+          <h2>About Us</h2>
+          <p>Welcome to our bookstore. We are passionate about providing a wide variety of books to readers of all ages and interests. Whether you're looking for the latest bestseller or a classic, we've got you covered.</p>
+          <div class="about-details">
+            <div>
+              <h3>Address</h3>
+              <p>Shop No 12, Cantt Plaza, Abbottabad</p>
+            </div>
+            <div>
+              <h3>Contact Us</h3>
+              <p>+92 0327 8294672</p>
+            </div>
+          </div>
+        </section>
+        <section id="order" class="order-form">
+          <h2>Order Form</h2>
+          <form action="bookstore.php" method="GET">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <label for="contact">Contact</label>
+              <input type="number" id="contact" name="contact" placeholder="Your Contact Number" required>
+              <label for="book">Book Title</label>
+              <input type="text" id="book" name="book" placeholder="Book Title" required>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Additional Notes"></textarea>
+
+              <button type="submit">Place Order</button>
+          </form>
+      </section>        
+     </div>
+    </div> 
+  </body>
+  <script>
+        const buttons = document.querySelectorAll('.book button');
+           buttons.forEach(button => {
+               button.addEventListener('click', () => {
+                    alert('Book added to cart!');
+         }); });
+</script>
+</html>
