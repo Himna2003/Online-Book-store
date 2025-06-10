@@ -1,0 +1,33 @@
+<?php 
+$username = "root";
+$password = "";
+$server = "localhost";
+$db_name = "bookstore";
+
+$conn = mysqli_connect($server, $username, $password, $db_name);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} else {
+    echo "Connection successful<br>";
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['name'], $_GET['email'], $_GET['contact'], $_GET['book'])) {
+    $name = mysqli_real_escape_string($conn, $_GET['name']);
+    $email = mysqli_real_escape_string($conn, $_GET['email']);
+    $contact = mysqli_real_escape_string($conn, $_GET['contact']);
+    $book = mysqli_real_escape_string($conn, $_GET['book']);
+    $message = isset($_GET['message']) ? mysqli_real_escape_string($conn, $_GET['message']) : '';
+
+    $sql = "INSERT INTO `books` (`Name`, `Email`, `Contact`, `BookTitle`, `Message`) 
+            VALUES ('$name', '$email', '$contact', '$book', '$message')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "Data inserted successfully.";
+    } else {
+        echo "Error inserting data: " . mysqli_error($conn);
+    }
+} else {
+    echo "Required fields are missing.";
+}
+mysqli_close($conn);
+?>
